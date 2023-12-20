@@ -1,0 +1,37 @@
+#masthead {
+
+    &.site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: var(--space-8);
+        position: fixed;
+        background-color: #6C757D70;
+        width: 100%;
+        z-index: 9;
+        transition: all .5s ease-in-out;
+
+        .btn {
+            transition: background-color .3s ease-in;
+        }
+
+        .site-branding {
+            transition: scale .5s ease-in-out;
+
+            img {
+                @include breakpoint (xsmobile) {
+                    max-width: 180px;
+                }
+            }
+        }
+
+        &.scrolled {
+            transition: all .3s ease-in;
+            height: var(--space-5);
+            background-color: var(--neutral-60);
+            .site-branding {
+                scale: 0.8;
+            }
+        }
+    }
+}

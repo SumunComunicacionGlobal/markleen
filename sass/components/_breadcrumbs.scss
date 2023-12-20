@@ -1,0 +1,11 @@
+#breadcrumbs, .rank-math-breadcrumb {
+    margin: var(--space-2) 0 var(--space-4) 0;
+    p {
+        @include font-size (.875);
+
+        a:first-of-type {
+            color: var(--tertiary);
+            text-decoration: none;
+        }
+    }
+}

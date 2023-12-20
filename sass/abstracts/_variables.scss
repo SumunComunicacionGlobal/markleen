@@ -1,0 +1,98 @@
+:root {
+    // Primary palette
+    --primary-10: #E8E8F3;
+    --primary-20: #C8C9E2;
+    --primary-30: #9C9ECC;
+    --primary-40: #6E71B4;
+    --primary-50: #42469D;
+    --primary: #191D88;
+    --primary-70: #151974;
+    --primary-80: #121561;
+    --primary-90: #0E114E;
+    --primary-100: #0B0D3D;
+
+    // Secondary palette
+    --secondary-10: #E7E9ED;
+    --secondary-20: #C4CBD3;
+    --secondary-30: #96A2B0;
+    --secondary-40: #65768B;
+    --secondary-50: #364D68;
+    --secondary: #0A2647;
+    --secondary-70: #09203C;
+    --secondary-80: #071B32;
+    --secondary-90: #061628;
+    --secondary-100: #051120;
+
+    // Tertiary palette
+    --tertiary-10: #F7E8E8;
+    --tertiary-20: #ECC8C9;
+    --tertiary-30: #DD9C9E;
+    --tertiary-40: #CD6E71;
+    --tertiary-50: #BD4246;
+    --tertiary: #AF191D;
+    --tertiary-70: #951519;
+    --tertiary-80: #7C1215;
+    --tertiary-90: #640E11;
+    --tertiary-100: #4F0B0D;
+
+    // Accent palette
+    --accent-10: #E6F8FA;
+    --accent-30: #96E1EC;
+    --accent: #00B7D0;
+    --accent-80: #008092;
+    --accent-100: #00515C;      
+
+    // Neutral palette
+    --neutral-white: #FFFFFF;
+    --neutral-10: #F8F9FA;
+    --neutral-20: #E9ECEF;
+    --neutral-30: #DEE2E6;
+    --neutral-40: #CED4DA;
+    --neutral-50: #ADB5BD;
+    --neutral-60: #6C757D;
+    --neutral-70: #495057;
+    --neutral-80: #343A40;
+    --neutral-90: #212529;
+    --neutral-100: #17171B;
+    --neutral-black: #000000;
+
+    // Texts colors
+    --text-main: #061628;
+    --text-medium: #65768B;
+    --text-white: #FFFFFF;
+    --text-link: var(--primary);
+    --text-link-hover: var(--primary-80);
+
+    // Feedback colors
+    --feedback-warning: #FFD11C;
+    --feedback-error: #FF0000;
+    --feedback-info: #3CB4FA;
+    --feedback-success: #2DAB66;
+
+    // Fonts 
+    --font-main: 'Source Sans 3', sans-serif;
+    --font-heading: 'Source Sans 3', sans-serif;
+    --font__code: monaco, consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    --font__pre: "Courier 10 Pitch", courier, monospace;
+    --font__line-height-body: 1.5;
+    --font__line-height-pre: 1.6;
+
+    // Background color
+    --background-body-color: var(--neutral-white);
+
+    // Border radius
+    --border-radius-0: 0;
+    --border-radius-sm: var(--space-025);
+    --border-radius-md: var(--space-05);
+    --border-radius-lg: var(--space-1);
+    --border-radius-xl: var(--space-3);
+    --border-radius-rounded: 999px;
+    
+    // Components Border radius
+    --border-radius-button: var(--border-radius-0);
+    --border-radius-input: var(--border-radius-md);
+    --border-radius-tag: var(--border-radius-rounded);
+    --border-radius-card: var(--border-radius-0);
+    
+
+}

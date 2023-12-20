@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+# Core
+--------------------------------------------------------------*/
+@import 'abstracts/abstracts';
+@import "base/typography";
+@import "components/blocks";
+@import "layouts/grid";
+
+
+html :where(.editor-styles-wrapper) {
+    font-family: var(--font-main);
+}
+
+:where(.wp-block-columns.has-background) {
+    padding: var(--grid-gap);
+}
+
+html :where(.wp-block) {
+    max-width: 1200px;
+}
+
+.wp-block[data-align="full"] {
+    max-width: none;
+}
+
+.wp-block[data-align="wide"] {
+    max-width: none;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}

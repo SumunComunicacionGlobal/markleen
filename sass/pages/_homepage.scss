@@ -1,0 +1,71 @@
+.home {
+    
+    #masthead.site-header {
+        position: fixed;
+        background-color: transparent;
+
+        .btn {
+            background-color: transparent;
+        }
+
+        .site-branding {
+            scale: 0;
+        }
+
+        &.scrolled {
+            transition: all .3s ease-in;
+            background-blend-mode: multiply;
+            background-color: var(--neutral-60);
+
+            .menu-toggle {
+                background-color: var(--tertiary);
+            }
+
+            .menu-contact {
+                background-color: var(--primary);
+            }
+
+            .site-branding {
+                scale: 0.8;
+                transition: scale .5s ease-in-out;
+            }
+        }
+    }
+    
+    #hero-home.wp-block-cover {
+
+        .wp-block-columns {
+         
+            .wp-block-image {
+                position: relative;
+                
+                    &::after {
+                        content:'';
+                        position: absolute;
+                        top: -40px;
+                        right: 0;
+                        height: calc(100% + var(--space-8));
+                        width: 1px;
+                        background-color: var(--neutral-white);
+                        display: block;
+                    }
+        
+                    @include breakpoint (mobile) {
+                        &::after {
+                            content: none;
+                        }
+                    }
+                }
+            }
+        
+            .wp-block-media-text__content {
+                a {
+                    color: var(--text-white);
+                    text-decoration: none;
+                }
+            }
+        }
+
+}
+
+

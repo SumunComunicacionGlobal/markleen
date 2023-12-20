@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap');
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: var(--text-main);
+	font-family: var(--font-main);
+	font-size: 1rem;
+	line-height: var(--font__line-height-body);
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: var(--neutral-90);
+	font-family: var(--font__pre);
+	line-height: var(--font__line-height-pre);
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: var(--font__code);
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted var(--neutral-30);
+	cursor: help;
+}
+
+mark,
+ins {
+	background: var(--color__background-ins);
+	text-decoration: none;
+}
+
+big, .big {
+	font-size: 120%;
+}
+
+.small {
+	font-size: 80%;
+}
+
+
+/**
+ * HEADINGS 
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.is-style-text-h1,
+.is-style-text-h2,
+.is-style-text-h3,
+.is-style-text-h4,
+.is-style-text-h5,
+.is-style-text-h6 {
+	clear: both;
+	margin-top: 0;
+	line-height: var(--font__line-height-header);
+	font-family: var(--font-heading);
+	margin-bottom: var(--space-1);
+}
+
+
+h1,
+.is-style-text-h1 {
+	font-size: 3.75rem;
+	font-weight: 300;
+	line-height: 1;
+
+	@include breakpoint(mobile) {
+		font-size: 2.8em;
+	}
+}
+
+
+h2,
+.is-style-text-h2 {
+	@include font-size(3);
+	font-weight: 300;
+	line-height: var(--space-5);
+
+	@include breakpoint(mobile) {
+		font-size: 2.5em;
+		line-height: var(--space-4);
+	}
+
+}
+
+h3,
+.is-style-text-h3 {
+	@include font-size(2);
+	font-weight: 300;
+	line-height: var(--space-4);
+
+	@include breakpoint(mobile) {
+		@include font-size(1.8);
+	}
+}
+
+h4,
+.is-style-text-h4 {
+	@include font-size(1.5);
+	font-weight: 400;
+	line-height: var(--space-3);
+
+	@include breakpoint(laptop) {
+		font-size: 1.75em;
+	}
+}
+
+h5,
+.is-style-text-h5 {
+	font-size: 1.5em;
+}
+
+h6,
+.is-style-text-h6 {
+	font-size: 1em;
+	text-transform: uppercase;
+}
+
+.text-caption {
+	text-transform: uppercase;
+	font-weight: bold;
+	@include font-size(1);
+}
+
+.uppercase {
+	text-transform: uppercase;
+}

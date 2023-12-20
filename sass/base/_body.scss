@@ -1,0 +1,18 @@
+body {
+	background: var(--background-body-color); // Fallback for when there is no custom background color defined.
+	overflow-x: hidden;
+
+	&.tax-product-category, &.single-products {
+		
+		main.site-main {
+			background: var(--neutral-20) url(assets/img/bg-curvas.png) no-repeat right bottom fixed;
+		}
+	}
+
+	&.blog {
+
+		.blog-bg {
+			background: var(--neutral-20) url(assets/img/bg-curvas.png) no-repeat right bottom fixed;
+		}
+	}
+}

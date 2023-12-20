@@ -1,0 +1,167 @@
+.card {
+    background-color: var(--neutral-white);
+    height: 100%;
+    color: initial;
+
+    &-image {
+        img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    &-content {
+        padding: var(--space-2);
+        z-index: 2;
+
+        h2 {
+            margin-bottom: 0;
+        }
+        .small.uppercase:first-of-type {
+            margin-top: var(--space-2);
+        }
+    }
+
+    &-footer {
+        padding: 0 var(--space-2) var(--space-2) var(--space-2);
+        z-index: 2;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--text-main);
+
+        &:hover {
+            color: var(--text-link);
+        }
+    }
+}
+
+
+.card-blog {
+    
+    height: 100%;
+    width: 100%;
+    position: relative;
+
+    .card-image {
+        height: 100%;
+        overflow: hidden;
+        
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            background-image: linear-gradient(0deg, #0A2647 30%, rgba(10, 38, 71, 0.00) 100%);
+            opacity: .6;
+            transition: opacity .3s ease-in-out;
+        }
+
+        & ~ .card-content {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    .card-content {
+        color: var(--text-white);
+        justify-content: space-between;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: inherit;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+
+    &:hover {
+
+        .card-image::before {
+            opacity: .9;
+        }
+    }
+}
+
+.wp-block-group.is-style-card-horizontal {
+    padding: 0;
+    @extend .is-style-border-radius;
+    gap: var(--space-2);
+    height: 100%;
+
+    @include breakpoint(xsmobile) {
+        flex-direction: column;
+    }
+
+    figure {
+        height: 100%;
+
+        img {
+            border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+
+            @include breakpoint(mobile) { 
+                border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+            }
+        }
+    } 
+
+    a.wp-block-read-more.wp-block-button__link {
+        @include font-size (1);
+        font-weight: 600;
+        background-color: transparent;
+        border: 2px solid;
+        transition: all .2s ease;
+        padding: var(--space-05) var(--space-2);
+
+        &:hover {
+            color: color(secondary);
+            background-color: white;
+            transition: all .2s ease;
+            padding: var(--space-05) var(--space-3);
+        }
+    }
+
+    .wp-block-group.wp-block-group-is-layout-flex {
+        padding: var(--space-2) var(--space-2) var(--space-2) 0;
+        @include breakpoint(mobile) {
+            padding: var(--space-2);
+        }
+    } 
+}
+
+.wp-block-group.is-style-card {
+    background-color: var(--neutral-white);
+    height: 100%;
+    color: initial;
+
+    .wp-block-post-title {
+        padding: 0 var(--space-2);
+        margin-bottom: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: var(--text-main);
+
+        &:hover {
+            color: var(--text-link);
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.type-products .entry-content {
+    padding-left: 8%;
+
+    #intro-product {
+        @include breakpoint(mobile) {
+            .wp-block-column:first-of-type {
+                padding: var(--space-3);
+            } 
+
+            .wp-block-column:last-of-type {
+                padding: var(--space-3);
+            } 
+        }
+    }
+
+    & > :where(.wp-block-columns.has-background, & > .wp-block-group.has-background):not(#intro-product):not(.alignfull) {
+        padding: var(--space-3) 8% var(--space-3) var(--space-7);
+
+        @include breakpoint(mobile) {
+            padding: var(--space-3);
+        }
+    }
+}
+
+
+section.content {
+    padding-left: 8%;
+    display: grid;
+    grid-template-columns: 1fr 33.3%;
+
+    @include breakpoint(mobile) {
+        display: block;
+    }
+
+    .content-wrap {
+        background-color: var(--neutral-white);
+        padding: var(--space-1) var(--space-20) var(--space-1) var(--space-7);
+
+        @include breakpoint(mobile) {
+            padding: var(--space-1) var(--space-3);
+        }
+    }
+
+    .filter-category {
+        background-color: var(--secondary-50);
+        padding: var(--space-3) 28% var(--space-3) var(--space-3);
+
+        a {
+            color: var(--text-white);
+        }
+    }
+
+    .grid-loop {
+        @include breakpoint(mobile) {
+            padding-right: 8%;
+        }
+        
+    }
+}

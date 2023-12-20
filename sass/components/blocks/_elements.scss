@@ -1,0 +1,101 @@
+.is-style-title-has-image, .is-style-title-has-image a {
+	display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+	width: 100%;
+}
+
+.title-has-image {
+	display: inline-flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+p.section-number {
+    width: var(--space-7);
+    border-bottom: 1px solid;
+    height: var(--space-6);
+    margin-right: var(--space-2);
+}
+
+.is-style-border-radius {
+    border-radius: var(--border-radius-lg);
+
+    .wp-block-media-text__media img {
+        border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+
+        @include breakpoint(mobile) {
+            border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        }
+    }
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+    padding: var(--space-2);
+}
+
+.is-layout-flex.wp-container-title {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    p.section-number {
+        margin-right: 0;
+        margin-left: var(--space-2);
+    }
+}
+
+#hover-boxes {
+
+    .wp-block-cover {
+        padding: var(--space-3);
+    }
+  
+    .wp-block-column {
+        flex-basis: 20%;
+        flex-grow: 0;
+        overflow-wrap: normal;
+        word-break: keep-all;
+        transition: all 0.5s ease-in-out;
+        align-items: end;
+
+        .wp-block-heading {
+            transform-origin: 0 0;
+            transform: translate(0%, 180%) rotate(-90deg);
+            transition: transform 0.5s ease-in;
+        }
+
+        .wp-block-cover__image-background, .wp-block-cover__background {
+            opacity: 0;
+            transition: opacity 0.5s ease .5s;
+        }
+
+        .wp-block-buttons, p {
+            opacity: 0;
+        }
+
+        &.active-box {
+            flex-basis: 60%;
+            flex-grow: 1;
+
+            .wp-block-heading {
+                transform: translate(0%, 0%) rotate(0deg);
+            }
+
+            .wp-block-cover__image-background {
+                opacity: 1;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .wp-block-cover__background {
+                opacity: .5;
+            }
+
+            .wp-block-buttons, p {
+                opacity: 1;
+                transition: opacity 0.3s ease .5s;
+            }
+        }
+    }
+}
+

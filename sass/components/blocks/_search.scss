@@ -1,0 +1,17 @@
+:where(.wp-block-search__button-inside .wp-block-search__inside-wrapper) {
+    border: 0;
+    border-radius: var(--border-radius-rounded);
+    padding: 0;
+}
+
+.wp-block-search.wp-block-search__button-inside {
+
+    input {
+        border-radius: var(--border-radius-rounded) 0 0 var(--border-radius-rounded);
+    }
+
+    .wp-block-search__button {
+        margin-left: 0;
+        border-radius: 0 var(--border-radius-rounded) var(--border-radius-rounded) 0;
+    }
+}

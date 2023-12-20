@@ -1,0 +1,107 @@
+/* COLORS */
+$primary-colors: (
+    primary-10: var(--primary-10),
+    primary-20: var(--primary-20),
+    primary-30: var(--primary-30),
+    primary-40: var(--primary-40),
+    primary-50: var(--primary-50),
+    primary: var(--primary),
+    primary-70: var(--primary-70),
+    primary-80: var(--primary-80),
+    primary-90: var(--primary-90),
+    primary-100: var(--primary-100),
+);
+
+$secondary-colors: (
+    secondary-10: var(--secondary-10),
+    secondary-20: var(--secondary-20),
+    secondary-30: var(--secondary-30),
+    secondary-40: var(--secondary-40),
+    secondary-50: var(--secondary-50),
+    secondary: var(--secondary),
+    secondary-70: var(--secondary-70),
+    secondary-80: var(--secondary-80),
+    secondary-90: var(--secondary-90),
+    secondary-100: var(--secondary-100),
+);
+
+$tertiary-colors: (
+    tertiary-10: var(--tertiary-10),
+    tertiary-20: var(--tertiary-20),
+    tertiary-30: var(--tertiary-30),
+    tertiary-40: var(--tertiary-40),
+    tertiary-50: var(--tertiary-50),
+    tertiary: var(--tertiary),
+    tertiary-70: var(--tertiary-70),
+    tertiary-80: var(--tertiary-80),
+    tertiary-90: var(--tertiary-90),
+    tertiary-100: var(--tertiary-100),
+);
+
+$accent-colors: (
+    accent-10: var(--accent-10),
+    accent-30: var(--accent-30),
+    accent: var(--accent),
+    accent-80: var(--accent-80),
+    accent-100: var(--accent-100),
+);
+
+$text-colors: (
+    text-main: var(--text-main, #191919),
+    text-medium: var(--text-medium, #6C757D),
+    text-white: var(--text-white, #FFFFFF),
+    text-link: var(--text-link),
+    text-link-hover: var(--text-link-hover),
+);
+
+$neutral-colors: (
+    neutral-white: var(--neutral-white),
+    neutral-10: var(--neutral-10),
+    neutral-20: var(--neutral-20),
+    neutral-30: var(--neutral-30),
+    neutral-40: var(--neutral-40),
+    neutral-50: var(--neutral-50),
+    neutral-60: var(--neutral),
+    neutral-70: var(--neutral-70),
+    neutral-80: var(--neutral-80),
+    neutral-90: var(--neutral-90),
+    neutral-100: var(--neutral-100),
+    neutral-black: var(--neutral-black),
+);
+
+$feedback-colors: (
+    feedback-warning: var(--feedback-warning, #FFD11C),
+    feedback-error: var(--feedback-error, #FF0000),
+    feedback-info: var(--feedback-info, #3CB4FA),
+    feedback-success: var(--feedback-success, #2DAB66),
+);
+
+
+// Function to merge all maps in a collection
+@function map-collect($maps...) {
+    $collection: ();
+  
+    @each $map in $maps {
+      $collection: map-merge($collection, $map);
+    }
+    @return $collection;
+}
+
+$allColors: map-collect($primary-colors, $secondary-colors, $tertiary-colors, $accent-colors, $neutral-colors, $text-colors, $feedback-colors); 
+$gutenbergColors: map-collect($primary-colors, $secondary-colors, $tertiary-colors, $accent-colors, $text-colors); 
+
+// Get a value from map. How to use: .className { color: color(primary) } 
+@function color($key) {
+    @return map-get($allColors, $key);
+}
+
+// Generate Gutenberg Colour Classes
+@each $key, $value in $gutenbergColors {
+	.has-#{$key}-color,
+	.has-#{$key}-color:visited {
+		color: $value;
+	}
+	.has-#{$key}-background-color {
+		background-color: $value;
+	}
+}

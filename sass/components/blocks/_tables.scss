@@ -1,0 +1,48 @@
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+
+.wp-block-table.is-style-color-table {
+	th {
+		padding: var(--space-05);
+		background-color: red;
+		color: var(--text-white);
+	}
+} 
+
+.wp-block-table {
+
+	&.is-style-stripes {
+		border-bottom: 0;
+		background-color: white;
+
+		thead {
+			border-bottom: 0;
+		}
+
+		th {
+			background-color: var(--tertiary);
+			color: var(--text-white);
+			padding: var(--space-1);
+		}
+
+		td {
+			text-align:center;
+			padding: var(--space-1);
+			border-color: var(--neutral-40);
+		}
+
+		tbody tr:nth-child(2n+1) {
+			background-color: var(--neutral-20);
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+}
+
+
+

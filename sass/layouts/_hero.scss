@@ -1,0 +1,63 @@
+#hero {
+    --hero-heigth: 568px;
+    position: relative;
+    height: var(--hero-heigth);
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+    background-color: var(--neutral-20);
+    
+    .post-thumbnail {
+        height: var(--hero-heigth);
+
+        img {
+            object-fit: cover;
+            width: 100dvw;
+            height: var(--hero-heigth);
+            
+        }
+    }
+
+    .post-thumbnail-video {
+
+        .wp-block-cover {
+            position: initial;
+
+            span.wp-block-cover__background {
+                left: 8%;
+            }
+            
+            video.wp-block-cover__video-background {
+                padding-left: 8%;
+            }
+        }
+    }
+    
+    .entry-title {
+        position: absolute;
+        left: 0;
+        min-width: 33.33%;
+        max-width: 92%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 10rem;
+        background-color: var(--tertiary);
+        padding: var(--space-2) var(--space-3) var(--space-2) var(--space-10);
+        color: var(--text-white);
+        z-index: 3;
+
+        @include breakpoint (xsmobile) {
+            padding: var(--space-2);
+        }
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        .entry-meta a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}

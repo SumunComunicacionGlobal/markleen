@@ -1,0 +1,36 @@
+#colophon.site-footer {
+    background-image: url(assets/img/bg-footer.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 0%;
+    color: var(--text-white);
+
+    .wp-widget-group__inner-blocks p {
+        margin-top: 0;
+    }
+
+    .site-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: var(--space-05);
+        padding-top: var(--space-3) ;
+        border-top: 1px solid var(--neutral-20);
+
+        #footer-menu {
+            margin: 0;
+            padding: 0;
+        }
+    }
+
+    a {
+        color: var(--text-white);
+    }
+}
+
+.site-footer {
+    a {
+        color: var(--text-white);
+    }
+}

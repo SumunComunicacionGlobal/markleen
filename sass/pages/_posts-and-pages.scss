@@ -1,0 +1,38 @@
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.tags-links, .cat-links {
+    @include font-size (1.2);  
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-025);
+
+    a {
+        background-color: var(--secondary-40);
+        color: var(--text-white);
+        text-decoration: none;
+        padding: var(--space-025) var(--space-1);
+        border-radius: var(--border-radius-lg);
+        @include font-size (1); 
+        font-weight: 500; 
+    
+        &:hover {
+            background-color: var(--secondary-50);
+        }
+    }
+}
+  
+  
