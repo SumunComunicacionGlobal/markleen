@@ -1,18 +1,25 @@
 .home {
     
     #masthead.site-header {
-        position: fixed;
+        
         background-color: transparent;
 
         .btn {
             background-color: transparent;
         }
 
-        .site-branding {
+        .site-branding { 
             scale: 0;
         }
 
-        &.scrolled {
+    }
+
+    .main-navigation ul.menu {
+        background-color: transparent;
+    }
+
+    .scrolled {
+        #masthead.site-header {
             transition: all .3s ease-in;
             background-blend-mode: multiply;
             background-color: var(--neutral-60);
@@ -30,6 +37,15 @@
                 transition: scale .5s ease-in-out;
             }
         }
+
+        .main-navigation ul.menu {
+            background-color: var(--secondary);
+            
+            @include breakpoint(mobile) {
+                background-color: transparent;
+            }
+        }
+        
     }
     
     #hero-home.wp-block-cover {

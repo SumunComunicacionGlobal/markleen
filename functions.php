@@ -12,6 +12,9 @@ if ( ! defined( '_S_VERSION' ) ) {
 	define( '_S_VERSION', '1.0.0' );
 }
 
+define( 'PREFOOTER_BLOG_ID', apply_filters( 'wpml_object_id', 13475, 'wp_block', true ) );
+define( 'PREFOOTER_PRODUCTS_ID', apply_filters( 'wpml_object_id', 12807, 'wp_block', true ) );
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -213,4 +216,15 @@ document.addEventListener( 'wpcf7mailsent', function( event ) {
 }, false );
 </script>
 <?php
+}
+
+add_action( 'wp_footer', 'smn_open_pdf_in_new_tab');
+function smn_open_pdf_in_new_tab() {
+	?>
+
+	<script>
+		jQuery("a[target!='_blank'][href$='.pdf']").attr("target", "_blank");
+	</script>
+
+	<?php
 }

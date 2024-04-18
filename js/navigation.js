@@ -46,25 +46,34 @@ $(document).ready(function() {
     subMenu.prepend('<button class="close-sub-menu" aria-label="Close"></button>');
     
     // Agrega el botón de abrir submenú dentro del <li>
-    menuItem.append('<span class="sub-menu-toggle" aria-expanded="false" aria-label="Toggle Submenu"></span');
+    menuItem.append('<span class="sub-menu-toggle" aria-expanded="false" aria-label="Toggle Submenu"></span>');
     var subMenuToggle = menuItem.find('.sub-menu-toggle');
 
     subMenuToggle.click(function() {
-      subMenu.toggleClass('open-sub-menu');
-      var isSubMenuOpen = subMenu.hasClass('open-sub-menu');
-      subMenu.find('.close-sub-menu').toggle(isSubMenuOpen);
-      subMenu.find('.sub-menu-title').toggle(isSubMenuOpen);
-      subMenuToggle.attr('aria-expanded', isSubMenuOpen);
+      toggleSubMenu(subMenu, subMenuToggle);
+    });
+
+    menuLink.click(function(e) {
+      if ($(this).attr('href') === '#' || $(this).attr('href') === '') {
+        e.preventDefault();
+        toggleSubMenu(subMenu, subMenuToggle);
+      }
     });
 
     menuItem.find('.close-sub-menu').click(function() {
       subMenu.removeClass('open-sub-menu');
       subMenuToggle.attr('aria-expanded', false);
-      //subMenu.find('.close-sub-menu').hide();
-      //subMenu.find('.sub-menu-title').hide();
     });
   });
 });
+
+function toggleSubMenu(subMenu, subMenuToggle) {
+  subMenu.toggleClass('open-sub-menu');
+  var isSubMenuOpen = subMenu.hasClass('open-sub-menu');
+  subMenu.find('.close-sub-menu').toggle(isSubMenuOpen);
+  subMenu.find('.sub-menu-title').toggle(isSubMenuOpen);
+  subMenuToggle.attr('aria-expanded', isSubMenuOpen);
+}
 
 document.addEventListener("DOMContentLoaded", function() {
   [].forEach.call(document.querySelectorAll(".link-ofuscado"), function(e) {
@@ -83,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  const masthead = document.getElementById('masthead');
+  const masthead = document.getElementById('page');
   let hasScrolled = false;
 
   window.addEventListener('scroll', function() {

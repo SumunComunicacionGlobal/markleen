@@ -2,6 +2,7 @@
     background-color: var(--neutral-white);
     height: 100%;
     color: initial;
+    position: relative;
 
     &-image {
         img {
@@ -17,7 +18,7 @@
         z-index: 2;
 
         h2 {
-            margin-bottom: 0;
+            //margin-bottom: 0;
         }
         .small.uppercase:first-of-type {
             margin-top: var(--space-2);

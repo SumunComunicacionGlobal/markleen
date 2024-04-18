@@ -15,6 +15,7 @@
                     'hide_empty' => false,
                     'orderby'  => 'name',
                     'order'    => 'DESC',
+                    'orderby'    => 'order',
                 )
             );
 

@@ -1,23 +1,27 @@
 .main-navigation {
-	height: 100dvh;
-	width: var(--space-40);
 	position: fixed;
 	z-index: 99;
-	top: 0;
 	left: 0;
-	overflow: hidden;
 	transition: translate .2s ease-in-out;
-	background-color: var(--tertiary);
-	translate: -400px;
 
 	@include breakpoint(mobile) {
 		width: var(--space-30);
-	}	
+		background-color: var(--tertiary);
+		top: 0;
+		translate: -400px;
+		height: 100dvh;
+		overflow: hidden;
+	}
 
 	.header-nav {
-		display: flex;
+		display: none;
 		justify-content: end;
 		padding: var(--space-1) 0 0;
+
+		@include breakpoint(mobile) {
+			display: flex;
+		}
+
 
 		.close-menu-toggle {
 			background: transparent;
@@ -27,8 +31,12 @@
 	}
 
 	.site-branding {
-		@include flex-center;
 		padding: var(--space-1) 0 var(--space-7) 0;
+		display: none;
+
+		@include breakpoint(mobile) {
+			@include flex-center;
+		}
 
 		img {
 			width: 16rem;
@@ -47,26 +55,54 @@
 
 	ul.menu {
 		display: flex;
-		flex-direction: column;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
 		@include font-size (1.125);
 		line-height: var(--space-2);
+		background-color: var(--secondary);
+		height: 80px;
+		transition: height .3s ease-out;
+
+		.scrolled & {
+			height: 56px;
+		}
+
+		@include breakpoint(mobile) {
+			flex-direction: column;
+			background-color: transparent;
+			height: auto;
+		}
 
 		li {
-			border-top: 1px dashed var(--neutral-white);
-			padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3);
-	
-			&:last-child {
-				border-bottom: 1px dashed var(--neutral-white);
+			padding: var(--space-1);
+
+			@include breakpoint(mobile) {
+				border-top: 1px dashed var(--neutral-white);
+				padding: var(--space-1) var(--space-2) var(--space-1) var(--space-3);
+
+				&:last-child {
+					border-bottom: 1px dashed var(--neutral-white);
+				}
 			}
 	
 			&.menu-item-has-children {
 				display: flex;
 				align-items: center;
 				justify-content: space-between;
-	
+				position: relative;
+
+				@include breakpoint(mobile) { 
+					position: initial;
+				}
+
+				@media only screen and (min-width: 48em) {
+					&:hover  > .sub-menu {
+						translate: 0;
+						opacity: 1;
+					}	
+				}
+
 				span.sub-menu-toggle {
 					transition: translate .2s ease-in-out;
 					position: relative;
@@ -91,10 +127,15 @@
 				display: block;
 				text-decoration: none;
 				color: var(--neutral-white);
-					
-				&:hover,.focus {
-					padding-left: var(--space-05);
-					transition: padding .3s ease-out;
+
+				&[href="#"] ~ .sub-menu-toggle{
+					display: none;
+				}
+
+				@include breakpoint(mobile) {
+					&[href="#"] ~ .sub-menu-toggle{
+						display: block;
+					}
 				}
 			}
 		}
@@ -110,26 +151,28 @@
 			display: flex;
 			flex-direction: column;
 			list-style: none;
-			top: 0;
+			top: 80px;
 			left: 0;
-			translate: -400px;
+			translate: -600px;
+			opacity: 0;
 			width: var(--space-40);
-			height: 100dvh;
 			z-index: 99999;
 			margin: 0;
-			
-			overflow-y: auto;
 			background-color: var(--neutral-20);
-			transition: translate .2s ease-in-out;
+			transition: .2s ease-in-out;
 			padding: var(--space-1) 0;
 
 			@include breakpoint(mobile) {
+				top: 0;
 				width: var(--space-30);
+				height: 100dvh;
+				overflow-y: auto;
 			}	
 			
 			&.open-sub-menu {
 				translate: 0;
 				transition: translate .2s ease-in-out;
+				opacity: 1;
 			}
 
 			.close-sub-menu {
@@ -141,6 +184,11 @@
 				position: relative;
 				background-color: transparent;
 				transition: margin-right .3s ease-out;
+				display: none !important;
+
+				@include breakpoint(mobile) {
+					display: inline-flex !important;
+				}
 
 				&::after {
 					content: url(assets/icons/arrow-left.svg);
@@ -174,14 +222,40 @@
 					}
 				}
 
+				a:hover,.focus {
+					padding-left: var(--space-05);
+					transition: padding .3s ease-out;
+				}
+
 				span.sub-menu-toggle::after {
 					filter: invert(.8);
 				}
+
+				@media only screen and (min-width: 48em) {
+					&:hover > .sub-menu {
+						top: 0;	
+						height: auto;
+						padding: var(--space-1) 0;				
+					}	
+				}	
+
 			}
 
 			ul {
-				translate: -400px;
-				transition: translate .2s ease-in;
+				transition: .2s ease-in;
+				left: 100%;
+				translate: 0;
+				height: 0;
+				overflow: hidden;
+				padding: 0;
+				
+				@include breakpoint(mobile) {
+					translate: -400px;
+					left: 0;
+					height: 100%;
+					overflow: auto;
+					padding: var(--space-1) 0;
+				}
 			}
 
 			.current_page_item > a,
@@ -198,17 +272,31 @@
 	}
 }
 
+.scrolled .main-navigation ul.menu ul {
+	top: 56px;
+	
+	@include breakpoint(mobile) {
+		top: 0;
+	}
+}
+
 .menu-toggle {
 	width: var(--space-8);
 	height: 100%;
 	border: 0;
 	background-color: var(--tertiary);
-	display: block;
+	display: none;
     padding: 0;
+
+	@include breakpoint(mobile) {
+		display: block;
+	}
 
 	&:hover {
 		cursor: pointer;
 	}
+
+	
 }
 
 .btn.menu-contact {

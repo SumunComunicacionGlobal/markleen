@@ -99,3 +99,21 @@ p.section-number {
     }
 }
 
+@media (min-width:1024px) {
+	.parent-links > ul {
+			display: grid;
+			gap: var(--space-1) var(--space-3);
+			grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.floating {
+	animation: floating;
+}
+
+@keyframes floating {
+    0% { transform: translate(0,  0px); }
+    50%  { transform: translate(0, 15px); }
+    100%   { transform: translate(0, -0px); }    
+}
+

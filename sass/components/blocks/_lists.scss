@@ -23,6 +23,40 @@ ul.is-style-separator-list{
             }
         }
     }
-
 }
 
+
+ul.is-style-arrow-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        border-bottom: 1px solid var(--neutral-50);
+		padding: var(--space-05) 0;
+        display: flex;
+        justify-content: space-between;
+
+        &::after {
+            content: url(assets/icons/arrow-right.svg);
+            display: block;
+            width: var(--space-2);
+            height: var(--space-2);
+            filter: invert(42%) sepia(9%) saturate(750%) hue-rotate(175deg);
+        }
+
+        a {
+            text-decoration: none;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transition: translate .2s ease-in;
+            color: var(--neutral-70);
+
+            &:hover {
+                translate: var(--space-05);
+                cursor: pointer;
+            }
+        }
+    }
+}

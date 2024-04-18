@@ -54,7 +54,7 @@ get_template_part( 'template-parts/hero', 'products' ); ?>
         </section>
         <?php
             // Recupera el bloque reutilizable por su ID o nombre
-            $reusable_block = get_post(12807); // Reemplaza el ID de tu bloque reutilizable
+            $reusable_block = get_post(PREFOOTER_PRODUCTS_ID); // Reemplaza el ID de tu bloque reutilizable
 
             // Verifica si el bloque reutilizable existe
             if ($reusable_block) {

@@ -67,7 +67,7 @@ get_header();
 		</div>
 		<?php
 			// Recupera el bloque reutilizable por su ID o nombre
-			$reusable_block = get_post(13475); // Reemplaza el ID de tu bloque reutilizable
+			$reusable_block = get_post(PREFOOTER_BLOG_ID); // Reemplaza el ID de tu bloque reutilizable
 
 			// Verifica si el bloque reutilizable existe
 			if ($reusable_block) {
