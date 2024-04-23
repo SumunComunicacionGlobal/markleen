@@ -68,12 +68,12 @@ p.section-number {
         .wp-block-cover__image-background, .wp-block-cover__background {
             opacity: 0;
             transition: opacity 0.5s ease .5s;
-            height: 0;
+            
         }
 
         .wp-block-buttons, p {
             opacity: 0;
-            height: 100%;
+            height: 0;
         }
 
         &.active-box {
@@ -96,6 +96,7 @@ p.section-number {
             .wp-block-buttons, p {
                 opacity: 1;
                 transition: opacity 0.3s ease .5s;
+                height: 100%;
             }
         }
     }
