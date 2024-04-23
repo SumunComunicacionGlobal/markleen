@@ -26,7 +26,7 @@ function taxonomy_terms_list_shortcode($atts) {
                 // Output the term's image using ACF (adjust the field name as needed)
                 $image = get_field('illustration_products_category', $term);
                 if ($image) {
-                    echo '<div class="card-illustration pt-2 pl-2"><img src="' . esc_url($image) . '" alt="' . esc_attr($term->name) . ' width="120px"></div>';
+                    echo '<div class="card-illustration pt-2 pl-2 pr-2"><img src="' . esc_url($image) . '" alt="' . esc_attr($term->name) . '" width="120px"></div>';
                 }
                 
                 echo '<div class="card-content">';

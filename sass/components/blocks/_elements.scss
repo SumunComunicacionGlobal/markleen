@@ -61,17 +61,19 @@ p.section-number {
 
         .wp-block-heading {
             transform-origin: 0 0;
-            transform: translate(0%, 180%) rotate(-90deg);
+            transform: translate(0%, 100%) rotate(-90deg);
             transition: transform 0.5s ease-in;
         }
 
         .wp-block-cover__image-background, .wp-block-cover__background {
             opacity: 0;
             transition: opacity 0.5s ease .5s;
+            height: 0;
         }
 
         .wp-block-buttons, p {
             opacity: 0;
+            height: 100%;
         }
 
         &.active-box {

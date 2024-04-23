@@ -6,6 +6,10 @@
     align-items: center;
     padding-left: 8%;
     background-color: var(--neutral-20);
+
+    .archive & {
+        background-color: var(--secondary-50);
+    }
     
     .post-thumbnail {
         height: var(--hero-heigth);

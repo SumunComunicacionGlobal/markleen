@@ -68,11 +68,14 @@ $(document).ready(function() {
 });
 
 function toggleSubMenu(subMenu, subMenuToggle) {
-  subMenu.toggleClass('open-sub-menu');
-  var isSubMenuOpen = subMenu.hasClass('open-sub-menu');
-  subMenu.find('.close-sub-menu').toggle(isSubMenuOpen);
-  subMenu.find('.sub-menu-title').toggle(isSubMenuOpen);
-  subMenuToggle.attr('aria-expanded', isSubMenuOpen);
+  // Comprueba si el ancho de la ventana es menor o igual a 768px (típicamente considerado el límite para dispositivos móviles)
+  if (window.innerWidth <= 768) {
+    subMenu.toggleClass('open-sub-menu');
+    var isSubMenuOpen = subMenu.hasClass('open-sub-menu');
+    subMenu.find('.close-sub-menu').toggle(isSubMenuOpen);
+    subMenu.find('.sub-menu-title').toggle(isSubMenuOpen);
+    subMenuToggle.attr('aria-expanded', isSubMenuOpen);
+  }
 }
 
 document.addEventListener("DOMContentLoaded", function() {

@@ -47,6 +47,10 @@
 	.footer-nav {
 		gap: var(--space-3);
 		padding: var(--space-3);
+		display: none;
+		@include breakpoint(mobile) {
+			display: block;
+		}
 	}
 
 	&.show-main-nav {
@@ -76,6 +80,8 @@
 
 		li {
 			padding: var(--space-1);
+			display: flex;
+			align-items: center;
 
 			@include breakpoint(mobile) {
 				border-top: 1px dashed var(--neutral-white);
